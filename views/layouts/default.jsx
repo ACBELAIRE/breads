@@ -13,11 +13,16 @@ function Default(html) {
                 <title> Default</title>
             </head>
             <body>
-                <h1> HTML Rendered!</h1>
-                <div className='container'>
+                <div className="wrapper">
+                <header>
+                    <h1><a href="/breads">BreadCRUD</a></h1>
+                </header>
+                <div className="container">
                     {html.children}
-                </div>
-            </body>
+    </div>
+  </div>
+</body>
+
         </html>
     )
 }
