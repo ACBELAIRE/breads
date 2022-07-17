@@ -11,6 +11,8 @@ app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.urlencoded({extended: true}))
+
 
 //make homepage route
 app.get('/',(req,res) => {
@@ -22,7 +24,7 @@ app.use('/breads', breadsController)
 
 // 404 Page
 app.get('*', (req, res) => {
-    res.send('404')
+    res.render('404')
   })
   
 // listen for server to stay open which will be a function that will log the port
